@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: supermarket-backend
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_NAME
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        value: 5000
+        sync: false
+      - key: NODE_ENV
+        value: production
+        sync: false
+
+databases:
+  - name: supermarket-db
+    databaseName: supermarket_db
+    user: supermarket_user
